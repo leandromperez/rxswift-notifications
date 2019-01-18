@@ -1,0 +1,6 @@
+framework module RxSwiftNotifications {
+  umbrella header "RxSwiftNotifications-umbrella.h"
+
+  export *
+  module * { export * }
+}

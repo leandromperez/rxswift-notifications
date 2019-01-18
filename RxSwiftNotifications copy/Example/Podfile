@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RxSwiftNotifications_Example' do
+  pod 'RxSwiftNotifications', :path => '../'
+
+  target 'RxSwiftNotifications_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
