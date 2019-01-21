@@ -1,0 +1,5 @@
+language: objective-c  
+osx_image: xcode10.1 
+xcode_project: Example/RxSwiftNotifications.xcodeproj
+xcode_scheme: RxSwiftNotifications_Tests
+xcode_sdk: iphonesimulator8.4
