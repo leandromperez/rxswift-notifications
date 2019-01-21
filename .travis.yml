@@ -10,5 +10,6 @@ before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/RxSwiftNotifications.xcworkspace -scheme 'RxSwiftNotifications-Example' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+- xcodebuild test -workspace Example/RxSwiftNotifications.xcworkspace -list
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/RxSwiftNotifications.xcworkspace -scheme RxSwiftNotifications-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
