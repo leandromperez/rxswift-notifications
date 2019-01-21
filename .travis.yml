@@ -1,5 +1,5 @@
 xcode_project: Example/RxSwiftNotifications.xcodeproj
-xcode_scheme: RxSwiftNotifications_Tests
+xcode_scheme: RxSwiftNotifications-Example
 xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
 
 osx_image: xcode10.1
