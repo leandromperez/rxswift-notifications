@@ -1,6 +1,6 @@
 # RxSwiftNotifications
 
-[![CI Status](https://img.shields.io/travis/leandromperez@gmail.com/RxSwiftNotifications.svg?style=flat)](https://travis-ci.org/leandromperez@gmail.com/RxSwiftNotifications)
+[![CI Status](https://img.shields.io/travis/leandromperez@gmail.com/RxSwiftNotifications.svg?style=flat)](https://travis-ci.org/leandromperez/rxswift-notifications.svg?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/RxSwiftNotifications.svg?style=flat)](https://cocoapods.org/pods/RxSwiftNotifications)
 [![License](https://img.shields.io/cocoapods/l/RxSwiftNotifications.svg?style=flat)](https://cocoapods.org/pods/RxSwiftNotifications)
 [![Platform](https://img.shields.io/cocoapods/p/RxSwiftNotifications.svg?style=flat)](https://cocoapods.org/pods/RxSwiftNotifications)
