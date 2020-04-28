@@ -21,7 +21,7 @@ let package = Package(
         ),
         .target(
             name: "RxSwiftNotificationsTests",
-            dependencies: ["RxSwift", "RxCocoa"],
+            dependencies: ["RxSwift", "RxCocoa", "RxSwiftNotifications"],
             path: "RxSwiftNotifications/Tests"
         )
     ],
