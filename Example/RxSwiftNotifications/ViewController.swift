@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         //Example of a standard notification listener. Checkout the tests for more examples
-        NSNotification.Name.UIApplicationDidBecomeActive
+        UIApplication.didBecomeActiveNotification
             .addListener {
                 print("App did become active")
             }

@@ -11,11 +11,11 @@ import RxSwift
 
 public extension Notifiable {
 
-    public func addListener(handler: @escaping (ParameterType) -> Void) -> Disposable {
+    func addListener(handler: @escaping (ParameterType) -> Void) -> Disposable {
         return self.asObservable().subscribe(onNext: handler)
     }
 
-    public func addListener(handler: @escaping (ParameterType, Notification) -> Void) -> Disposable {
+    func addListener(handler: @escaping (ParameterType, Notification) -> Void) -> Disposable {
         return self.notificationObservable()
             .subscribe(onNext: { notification in
                 guard let parameter = notification.userInfo?[self.identifier] as? ParameterType
@@ -24,11 +24,11 @@ public extension Notifiable {
             })
     }
 
-    public func addListener<T:AnyObject>(weak object:T,  handler: @escaping (T, ParameterType) -> Void ) -> Disposable {
+    func addListener<T:AnyObject>(weak object:T,  handler: @escaping (T, ParameterType) -> Void ) -> Disposable {
         return self.addListener(weak: object, handler: curry(handler))
     }
 
-    public func addListener<T:AnyObject>(weak object:T,  handler: @escaping (T) -> (ParameterType) -> Void ) -> Disposable {
+    func addListener<T:AnyObject>(weak object:T,  handler: @escaping (T) -> (ParameterType) -> Void ) -> Disposable {
         return self.addListener { [weak object] (parameter) in
             guard let object = object else {return}
 
@@ -36,7 +36,7 @@ public extension Notifiable {
         }
     }
 
-    public func addNoParamsListener<T:AnyObject>(weak object:T, _ handler: @escaping (T) -> () -> Void ) -> Disposable {
+    func addNoParamsListener<T:AnyObject>(weak object:T, _ handler: @escaping (T) -> () -> Void ) -> Disposable {
 
         return self.addListener { [weak object] (_) in
             guard let object = object else {return}

@@ -19,25 +19,25 @@ public protocol NoParamNotifiable : NotificationObservable {
 
 public extension NoParamNotifiable {
 
-    public func post() {
+    func post() {
         NotificationCenter.default.post(name: self.notificationName, object: nil, userInfo: nil)
     }
 
-    public func addListener(handler: @escaping () -> Void) -> Disposable {
+    func addListener(handler: @escaping () -> Void) -> Disposable {
         return self.notificationObservable()
             .subscribe(onNext: { (_) in
                 handler()
             })
     }
 
-    public func addListener(handler: @escaping (Notification) -> Void) -> Disposable {
+    func addListener(handler: @escaping (Notification) -> Void) -> Disposable {
         return self.notificationObservable()
             .subscribe(onNext: { notification in
                 handler(notification)
             })
     }
 
-    public func addListener<A:AnyObject>(weak obj:A, handler: @escaping (A) -> () -> Void) -> Disposable {
+    func addListener<A:AnyObject>(weak obj:A, handler: @escaping (A) -> () -> Void) -> Disposable {
         return self.addListener { [weak obj] in
             guard let obj = obj else {return}
 

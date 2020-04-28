@@ -76,3 +76,5 @@ fastlane/README.md
 *.p12
 *.ipa
 *.mobileprovision
+Pods
+.DS_Store

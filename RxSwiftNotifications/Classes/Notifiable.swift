@@ -18,12 +18,12 @@ public protocol Notifiable : NotificationObservable {
 
 public extension Notifiable {
 
-    public func post(parameter: ParameterType) {
+    func post(parameter: ParameterType) {
         let userInfo  : [AnyHashable: Any]? = [self.identifier : parameter]
         NotificationCenter.default.post(name: self.notificationName, object: nil, userInfo: userInfo)
     }
 
-    public func asObservable() -> Observable<ParameterType> {
+    func asObservable() -> Observable<ParameterType> {
         return self.notificationObservable()
             .map{
                 guard let parameter = $0.userInfo?[self.identifier] as? ParameterType

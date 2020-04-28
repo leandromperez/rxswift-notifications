@@ -16,11 +16,11 @@ public protocol NotificationObservable {
 }
 
 public extension NotificationObservable {
-    public var notificationName : Notification.Name {
+    var notificationName : Notification.Name {
         return Notification.Name(self.identifier)
     }
     
-    public func notificationObservable() -> Observable<Notification> {
+    func notificationObservable() -> Observable<Notification> {
         return NotificationCenter.default.rx.notification(self.notificationName)
     }
 }

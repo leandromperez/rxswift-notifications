@@ -18,13 +18,13 @@ class UIKitNotificationsTests: XCTestCase {
         let disposeBag = DisposeBag()
 
         //This is just to show you how to listen to a regular UIKit notification
-        NSNotification.Name.UIApplicationWillTerminate
+        UIApplication.willTerminateNotification
             .notificationObservable()
             .subscribe(onNext: { (notification) in
             })
             .disposed(by: disposeBag)
 
-        NSNotification.Name.UIApplicationDidBecomeActive
+        UIApplication.didBecomeActiveNotification
             .notificationObservable()
             .subscribe(onNext: { _ in
             })

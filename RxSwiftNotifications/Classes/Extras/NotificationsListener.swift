@@ -22,13 +22,13 @@ public protocol NotificationsListener {
 
 public extension NotificationsListener {
 
-    public func listenToNotification(named name:Notification.Name, do handler:@escaping (Notification) -> Void ) -> Disposable {
+    func listenToNotification(named name:Notification.Name, do handler:@escaping (Notification) -> Void ) -> Disposable {
         return NotificationCenter.default.rx
             .notification(name)
             .subscribe(onNext: handler)
     }
 
-    public func listenTo<T:NoParamNotifiable>( notification : T, do handler: @escaping(Notification) -> Void ) -> Disposable {
+    func listenTo<T:NoParamNotifiable>( notification : T, do handler: @escaping(Notification) -> Void ) -> Disposable {
         return notification.addListener(handler: handler)
     }
 
